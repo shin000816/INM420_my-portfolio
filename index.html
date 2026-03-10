@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Rivera — Designer &amp; Animator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Cursor glow — follows mouse via JS -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo" aria-label="Back to top — Alex Rivera">AR</a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Introduction">
+
+      <!-- Layered animated background -->
+      <div class="hero-bg" aria-hidden="true">
+        <!-- Soft floating orbs — animated with CSS, GPU-friendly -->
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+        <div class="hero-orb hero-orb--3"></div>
+        <!-- Subtle dot-grid overlay -->
+        <div class="hero-grid"></div>
+      </div>
+
+      <!-- Main content -->
+      <div class="hero-content">
+
+        <!-- Eyebrow label -->
+        <p class="hero-eyebrow">Interactive Design &amp; Animation</p>
+
+        <!-- Name — gradient treatment on last name -->
+        <h1 class="hero-name">
+          <span class="hero-name__first">Alex</span>
+          <span class="hero-name__last">Rivera</span>
+        </h1>
+
+        <!-- Tagline -->
+        <p class="hero-tagline">
+          Designer.&ensp;Animator.&ensp;Creative Thinker.
+        </p>
+
+        <!-- CTA — smooth-scrolls to #work via href + CSS scroll-behavior -->
+        <a href="#work" class="hero-cta" aria-label="Jump to my projects">
+          <span>View My Work</span>
+          <!-- Arrow icon -->
+          <svg class="hero-cta__arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- Scroll nudge -->
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll__label">Scroll</span>
+        <div class="hero-scroll__line"></div>
+      </div>
+
+    </section><!-- /hero -->
+
+    <!-- ============================================================
+         ABOUT  (placeholder — styled in a later step)
+    ============================================================ -->
+    <section class="about" id="about" aria-label="About Alex">
+      <div class="container">
+        <p style="color:var(--text-secondary);padding:6rem 0">About section — coming soon.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WORK  (placeholder — styled in a later step)
+    ============================================================ -->
+    <section class="work" id="work" aria-label="Projects">
+      <div class="container">
+        <p style="color:var(--text-secondary);padding:6rem 0">Work section — coming soon.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS  (placeholder — styled in a later step)
+    ============================================================ -->
+    <section class="skills" id="skills" aria-label="Skills">
+      <div class="container">
+        <p style="color:var(--text-secondary);padding:6rem 0">Skills section — coming soon.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT  (placeholder — styled in a later step)
+    ============================================================ -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <div class="container">
+        <p style="color:var(--text-secondary);padding:6rem 0">Contact section — coming soon.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER  (placeholder — styled in a later step)
+  ============================================================ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <p style="color:var(--text-secondary);padding:2rem 0;font-size:var(--text-sm)">
+        &copy; 2025 Alex Rivera
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
