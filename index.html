@@ -3,83 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Rivera — Designer &amp; Animator</title>
-  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ── SEO ── -->
+  <title>Yubin Shin — Interactive Designer, Creator &amp; Developer</title>
+  <meta name="description" content="Yubin Shin is an interactive designer, creator, and developer specialising in UI/UX, motion, and front-end development. Available for freelance work and collaborations." />
+  <meta name="author" content="Yubin Shin" />
+
+  <!-- ── Open Graph (social sharing previews) ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Yubin Shin — Interactive Designer, Creator &amp; Developer" />
+  <meta property="og:description" content="Interactive Designer / Creator / Developer — portfolio of Yubin Shin." />
+  <meta property="og:image"       content="assets/images/og-preview.png" />
+  <meta property="og:url"         content="https://yubinshin.design" />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236366f1'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='14' fill='white'%3EYS%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon"    href="assets/images/apple-touch-icon.png" />
+
+  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Stylesheet ── -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- Cursor glow — follows mouse via JS -->
+  <!-- Cursor glow — follows mouse via JS, hidden on touch screens -->
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <!-- ============================================================
        NAVBAR
   ============================================================ -->
-  <header class="navbar" id="navbar">
+  <header class="navbar" id="navbar" role="banner">
+
+    <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
+
     <div class="nav-inner container">
-      <a href="#hero" class="nav-logo" aria-label="Back to top — Alex Rivera">AR</a>
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Yubin Shin — scroll to top">
+        <span class="nav-logo__mark" aria-hidden="true">YS</span>
+        <span class="nav-logo__name">Yubin Shin</span>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#about"   class="nav-link">About</a>
+        <a href="#work"    class="nav-link">Work</a>
+        <a href="#skills"  class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <!-- Hamburger toggle -->
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
       </button>
+
     </div>
   </header>
 
-  <main>
+  <!-- Mobile drawer backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
 
     <!-- ============================================================
          HERO
     ============================================================ -->
-    <section class="hero" id="hero" aria-label="Introduction">
+    <section class="hero" id="hero" aria-labelledby="hero-name">
 
-      <!-- Layered animated background -->
       <div class="hero-bg" aria-hidden="true">
-        <!-- Soft floating orbs — animated with CSS, GPU-friendly -->
         <div class="hero-orb hero-orb--1"></div>
         <div class="hero-orb hero-orb--2"></div>
         <div class="hero-orb hero-orb--3"></div>
-        <!-- Subtle dot-grid overlay -->
         <div class="hero-grid"></div>
       </div>
 
-      <!-- Main content -->
       <div class="hero-content">
+        <p class="hero-eyebrow">Interactive Design &amp; Development</p>
 
-        <!-- Eyebrow label -->
-        <p class="hero-eyebrow">Interactive Design &amp; Animation</p>
-
-        <!-- Name — gradient treatment on last name -->
-        <h1 class="hero-name">
-          <span class="hero-name__first">Alex</span>
-          <span class="hero-name__last">Rivera</span>
+        <h1 class="hero-name" id="hero-name">
+          <span class="hero-name__first">Yubin</span>
+          <span class="hero-name__last">Shin</span>
         </h1>
 
-        <!-- Tagline -->
         <p class="hero-tagline">
-          Designer.&ensp;Animator.&ensp;Creative Thinker.
+          Interactive Designer.&ensp;Creator.&ensp;Developer.
         </p>
 
-        <!-- CTA — smooth-scrolls to #work via href + CSS scroll-behavior -->
-        <a href="#work" class="hero-cta" aria-label="Jump to my projects">
+        <a href="#work" class="hero-cta" aria-label="View my selected projects">
           <span>View My Work</span>
-          <!-- Arrow icon -->
-          <svg class="hero-cta__arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="hero-cta__arrow" width="18" height="18" viewBox="0 0 18 18"
+               fill="none" aria-hidden="true" focusable="false">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5"
+                  stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-
       </div>
 
-      <!-- Scroll nudge -->
       <div class="hero-scroll" aria-hidden="true">
         <span class="hero-scroll__label">Scroll</span>
         <div class="hero-scroll__line"></div>
@@ -87,54 +120,477 @@
 
     </section><!-- /hero -->
 
-    <!-- ============================================================
-         ABOUT  (placeholder — styled in a later step)
-    ============================================================ -->
-    <section class="about" id="about" aria-label="About Alex">
-      <div class="container">
-        <p style="color:var(--text-secondary);padding:6rem 0">About section — coming soon.</p>
-      </div>
-    </section>
 
     <!-- ============================================================
-         WORK  (placeholder — styled in a later step)
+         ABOUT
+         ── Replace the placeholder text below with your real bio.
+         ── Drop your photo at  assets/images/me.jpg
+            then swap the src below to  assets/images/me.jpg
     ============================================================ -->
-    <section class="work" id="work" aria-label="Projects">
+    <section class="about" id="about" aria-labelledby="about-heading">
       <div class="container">
-        <p style="color:var(--text-secondary);padding:6rem 0">Work section — coming soon.</p>
+        <div class="about__inner">
+
+          <!-- Photo -->
+          <div class="about__photo-wrap">
+            <img
+              class="about__photo"
+              src="assets/images/me.jpg"
+              alt="Portrait photo of Yubin Shin"
+              width="480" height="480"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Text -->
+          <div class="about__text">
+            <p class="about__eyebrow" aria-hidden="true">About Me</p>
+            <h2 class="about__heading" id="about-heading">
+              Hello, I'm Yubin.
+            </h2>
+            <!-- ↓ Replace with your real 2–3 sentence bio ↓ -->
+            <p class="about__bio">
+              Your bio — 2–3 sentences about who you are, what you make,
+              and what drives you. Keep it personal and direct —
+              this is where visitors decide whether to scroll further.
+            </p>
+            <a href="#contact" class="about__cta">
+              Get in touch
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none"
+                   aria-hidden="true" focusable="false">
+                <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5"
+                      stroke="currentColor" stroke-width="1.6"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
       </div>
-    </section>
+    </section><!-- /about -->
+
 
     <!-- ============================================================
-         SKILLS  (placeholder — styled in a later step)
+         WORK / PROJECTS
+         ── 4 real projects — swap image src to your files in
+            assets/images/ and update all text content.
+         ── Add or remove <li> cards as needed; the grid adjusts.
     ============================================================ -->
-    <section class="skills" id="skills" aria-label="Skills">
+    <section class="work" id="work" aria-labelledby="work-heading">
       <div class="container">
-        <p style="color:var(--text-secondary);padding:6rem 0">Skills section — coming soon.</p>
+
+        <header class="work__header">
+          <p class="work__eyebrow" aria-hidden="true">Selected Work</p>
+          <h2 class="work__heading" id="work-heading">Projects I'm proud of.</h2>
+          <p class="work__subheading">
+            A mix of design, interaction, and code — each one a different problem to solve.
+          </p>
+        </header>
+
+        <ul class="projects-grid" role="list">
+
+          <!-- ── Card 1 ── Replace ALL content below ── -->
+          <li class="project-card scroll-reveal" role="listitem">
+            <a href="#" class="project-card__link"
+               aria-label="View project: [Project 1 title]">
+              <div class="project-card__media">
+                <img
+                  class="project-card__image"
+                  src="assets/images/project-1.jpg"
+                  alt="[Describe what is shown in the project 1 screenshot]"
+                  width="600" height="400" loading="lazy"
+                />
+                <div class="project-card__overlay" aria-hidden="true">
+                  <p class="project-card__overlay-desc">
+                    [Project 1 description — one or two sentences about the work and your role.]
+                  </p>
+                  <span class="project-card__overlay-cta">
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                         aria-hidden="true" focusable="false">
+                      <path d="M2.5 7h9M8 3.5 11.5 7 8 10.5"
+                            stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">[Category]</span>
+                  <span class="project-card__year">[Year]</span>
+                </div>
+                <h3 class="project-card__title">[Project 1 Title]</h3>
+              </div>
+            </a>
+          </li>
+
+          <!-- ── Card 2 ── -->
+          <li class="project-card scroll-reveal" role="listitem">
+            <a href="#" class="project-card__link"
+               aria-label="View project: [Project 2 title]">
+              <div class="project-card__media">
+                <img
+                  class="project-card__image"
+                  src="assets/images/project-2.jpg"
+                  alt="[Describe what is shown in the project 2 screenshot]"
+                  width="600" height="400" loading="lazy"
+                />
+                <div class="project-card__overlay" aria-hidden="true">
+                  <p class="project-card__overlay-desc">
+                    [Project 2 description — one or two sentences about the work and your role.]
+                  </p>
+                  <span class="project-card__overlay-cta">
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                         aria-hidden="true" focusable="false">
+                      <path d="M2.5 7h9M8 3.5 11.5 7 8 10.5"
+                            stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">[Category]</span>
+                  <span class="project-card__year">[Year]</span>
+                </div>
+                <h3 class="project-card__title">[Project 2 Title]</h3>
+              </div>
+            </a>
+          </li>
+
+          <!-- ── Card 3 ── -->
+          <li class="project-card scroll-reveal" role="listitem">
+            <a href="#" class="project-card__link"
+               aria-label="View project: [Project 3 title]">
+              <div class="project-card__media">
+                <img
+                  class="project-card__image"
+                  src="assets/images/project-3.jpg"
+                  alt="[Describe what is shown in the project 3 screenshot]"
+                  width="600" height="400" loading="lazy"
+                />
+                <div class="project-card__overlay" aria-hidden="true">
+                  <p class="project-card__overlay-desc">
+                    [Project 3 description — one or two sentences about the work and your role.]
+                  </p>
+                  <span class="project-card__overlay-cta">
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                         aria-hidden="true" focusable="false">
+                      <path d="M2.5 7h9M8 3.5 11.5 7 8 10.5"
+                            stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">[Category]</span>
+                  <span class="project-card__year">[Year]</span>
+                </div>
+                <h3 class="project-card__title">[Project 3 Title]</h3>
+              </div>
+            </a>
+          </li>
+
+          <!-- ── Card 4 ── -->
+          <li class="project-card scroll-reveal" role="listitem">
+            <a href="#" class="project-card__link"
+               aria-label="View project: [Project 4 title]">
+              <div class="project-card__media">
+                <img
+                  class="project-card__image"
+                  src="assets/images/project-4.jpg"
+                  alt="[Describe what is shown in the project 4 screenshot]"
+                  width="600" height="400" loading="lazy"
+                />
+                <div class="project-card__overlay" aria-hidden="true">
+                  <p class="project-card__overlay-desc">
+                    [Project 4 description — one or two sentences about the work and your role.]
+                  </p>
+                  <span class="project-card__overlay-cta">
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                         aria-hidden="true" focusable="false">
+                      <path d="M2.5 7h9M8 3.5 11.5 7 8 10.5"
+                            stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">[Category]</span>
+                  <span class="project-card__year">[Year]</span>
+                </div>
+                <h3 class="project-card__title">[Project 4 Title]</h3>
+              </div>
+            </a>
+          </li>
+
+        </ul><!-- /projects-grid -->
+
       </div>
-    </section>
+    </section><!-- /work -->
+
 
     <!-- ============================================================
-         CONTACT  (placeholder — styled in a later step)
+         SKILLS
+         ── Update the badge lists below to match your real skills.
+         ── Each group can have any number of .skill-badge items.
+         ── Remove groups you don't need or add new ones.
     ============================================================ -->
-    <section class="contact" id="contact" aria-label="Contact">
+    <section class="skills" id="skills" aria-labelledby="skills-heading">
       <div class="container">
-        <p style="color:var(--text-secondary);padding:6rem 0">Contact section — coming soon.</p>
+
+        <div class="skills__header scroll-reveal">
+          <p class="skills__eyebrow" aria-hidden="true">Toolkit</p>
+          <h2 class="skills__heading" id="skills-heading">Tools I work with.</h2>
+          <p class="skills__subheading">
+            From concept to code — these are the tools and languages I reach for every day.
+          </p>
+        </div>
+
+        <!-- ── Group 1: Design ── -->
+        <div class="skills__group scroll-reveal">
+          <h3 class="skills__group-label">Design</h3>
+          <ul class="skills__list" role="list">
+
+            <li class="skill-badge" role="listitem">
+              <!-- Figma -->
+              <svg class="skill-badge__icon" viewBox="0 0 38 57" fill="none"
+                   aria-hidden="true" focusable="false">
+                <path d="M19 28.5A9.5 9.5 0 1 1 28.5 19 9.51 9.51 0 0 1 19 28.5Z" fill="#1ABCFE"/>
+                <path d="M9.5 47.5A9.5 9.5 0 0 1 19 38v9.5A9.5 9.5 0 0 1 9.5 57Z" fill="#0ACF83"/>
+                <path d="M0 38a9.5 9.5 0 0 1 9.5-9.5H19V38a9.5 9.5 0 0 1-9.5 9.5Z" fill="#FF7262"/>
+                <path d="M0 19a9.5 9.5 0 0 1 9.5-9.5H19v19H9.5A9.5 9.5 0 0 1 0 19Z" fill="#F24E1E"/>
+                <path d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5Z" fill="#FF7262"/>
+                <path d="M19 0h9.5a9.5 9.5 0 0 1 0 19H19Z" fill="#F24E1E"/>
+              </svg>
+              <span class="skill-badge__name">Figma</span>
+            </li>
+
+            <li class="skill-badge" role="listitem">
+              <!-- Photoshop -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#001D34"/>
+                <text x="7" y="26" font-family="sans-serif" font-size="18"
+                      font-weight="700" fill="#31A8FF">Ps</text>
+              </svg>
+              <span class="skill-badge__name">Photoshop</span>
+            </li>
+
+            <li class="skill-badge" role="listitem">
+              <!-- Illustrator -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#280D00"/>
+                <text x="5" y="26" font-family="sans-serif" font-size="18"
+                      font-weight="700" fill="#FF9A00">Ai</text>
+              </svg>
+              <span class="skill-badge__name">Illustrator</span>
+            </li>
+
+          </ul>
+        </div><!-- /Design group -->
+
+        <!-- ── Group 2: Motion & 3D ── -->
+        <div class="skills__group scroll-reveal">
+          <h3 class="skills__group-label">Motion &amp; 3D</h3>
+          <ul class="skills__list" role="list">
+
+            <li class="skill-badge skill-badge--featured" role="listitem">
+              <!-- After Effects -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#00005B"/>
+                <text x="4" y="26" font-family="sans-serif" font-size="17"
+                      font-weight="700" fill="#9999FF">Ae</text>
+              </svg>
+              <span class="skill-badge__name">After Effects</span>
+            </li>
+
+            <li class="skill-badge skill-badge--featured" role="listitem">
+              <!-- Premiere Pro -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#0D0032"/>
+                <text x="5" y="26" font-family="sans-serif" font-size="17"
+                      font-weight="700" fill="#9999FF">Pr</text>
+              </svg>
+              <span class="skill-badge__name">Premiere Pro</span>
+            </li>
+
+            <li class="skill-badge skill-badge--featured" role="listitem">
+              <!-- Blender -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#1A1A1A"/>
+                <circle cx="18" cy="21" r="7" fill="none"
+                        stroke="#E87D0D" stroke-width="2.5"/>
+                <circle cx="18" cy="21" r="3" fill="#E87D0D"/>
+                <line x1="18" y1="14" x2="18" y2="8"
+                      stroke="#E87D0D" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="18" y1="8"  x2="26" y2="8"
+                      stroke="#E87D0D" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <span class="skill-badge__name">Blender</span>
+            </li>
+
+          </ul>
+        </div><!-- /Motion & 3D group -->
+
+        <!-- ── Group 3: Code ── -->
+        <div class="skills__group scroll-reveal">
+          <h3 class="skills__group-label">Code</h3>
+          <ul class="skills__list" role="list">
+
+            <li class="skill-badge" role="listitem">
+              <!-- HTML / CSS -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#1A1A2E"/>
+                <text x="3" y="25" font-family="sans-serif" font-size="11"
+                      font-weight="700" fill="#E34F26">HTML</text>
+                <text x="3" y="34" font-family="sans-serif" font-size="9"
+                      font-weight="600" fill="#EF652A">CSS</text>
+              </svg>
+              <span class="skill-badge__name">HTML / CSS</span>
+            </li>
+
+            <li class="skill-badge" role="listitem">
+              <!-- JavaScript -->
+              <svg class="skill-badge__icon" viewBox="0 0 36 36" fill="none"
+                   aria-hidden="true" focusable="false">
+                <rect width="36" height="36" rx="7" fill="#F7DF1E"/>
+                <text x="5" y="26" font-family="sans-serif" font-size="16"
+                      font-weight="800" fill="#1A1A1A">JS</text>
+              </svg>
+              <span class="skill-badge__name">JavaScript</span>
+            </li>
+
+          </ul>
+        </div><!-- /Code group -->
+
       </div>
-    </section>
+    </section><!-- /skills -->
+
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact__inner">
+
+          <p class="contact__eyebrow scroll-reveal" aria-hidden="true">Get in Touch</p>
+
+          <h2 class="contact__heading scroll-reveal" id="contact-heading">
+            Let's Connect.
+          </h2>
+
+          <p class="contact__body scroll-reveal">
+            I'm open to freelance work, collaborations, and full-time opportunities.
+            Whether you have a project in mind or just want to say hello — my inbox is always open.
+          </p>
+
+          <!-- ↓ Replace with your real email address ↓ -->
+          <a
+            href="mailto:[your-email@example.com]"
+            class="contact__email-btn scroll-reveal"
+            aria-label="Send an email to Yubin Shin"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="20" height="16" rx="2"
+                    stroke="currentColor" stroke-width="1.7"/>
+              <path d="M2 7l10 7 10-7"
+                    stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            [your-email@example.com]
+          </a>
+
+          <ul class="contact__social-list scroll-reveal" role="list"
+              aria-label="Social media profiles">
+
+            <!-- Behance — ↓ replace href with your Behance URL ↓ -->
+            <li>
+              <a href="[https://www.behance.net/YOUR_USERNAME]" class="social-link"
+                 aria-label="Yubin Shin on Behance (opens in new tab)"
+                 rel="noopener noreferrer" target="_blank">
+                <svg class="social-link__icon" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zM7.33 7.225c0 1.063-.465 1.866-1.395 2.17C7.07 9.683 8 10.64 8 12.209c0 2.272-1.73 3.531-4.375 3.531H0V4h3.412c2.59 0 3.918.973 3.918 3.225zm-4.815 1.387h1.44c.968 0 1.547-.467 1.547-1.336 0-.832-.531-1.232-1.504-1.232H2.515v2.568zm0 4.68h1.608c1.093 0 1.73-.452 1.73-1.426 0-.94-.683-1.401-1.77-1.401H2.515v2.827z"/>
+                </svg>
+                <span class="social-link__label">Behance</span>
+              </a>
+            </li>
+
+            <!-- LinkedIn — ↓ replace href with your LinkedIn URL ↓ -->
+            <li>
+              <a href="[https://www.linkedin.com/in/YOUR_USERNAME]" class="social-link"
+                 aria-label="Yubin Shin on LinkedIn (opens in new tab)"
+                 rel="noopener noreferrer" target="_blank">
+                <svg class="social-link__icon" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <span class="social-link__label">LinkedIn</span>
+              </a>
+            </li>
+
+            <!-- Instagram — ↓ replace href with your Instagram URL ↓ -->
+            <li>
+              <a href="[https://www.instagram.com/YOUR_USERNAME]" class="social-link"
+                 aria-label="Yubin Shin on Instagram (opens in new tab)"
+                 rel="noopener noreferrer" target="_blank">
+                <svg class="social-link__icon" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                <span class="social-link__label">Instagram</span>
+              </a>
+            </li>
+
+          </ul><!-- /social-list -->
+
+        </div>
+      </div>
+    </section><!-- /contact -->
 
   </main>
 
+
   <!-- ============================================================
-       FOOTER  (placeholder — styled in a later step)
+       FOOTER
   ============================================================ -->
-  <footer class="footer" id="footer" role="contentinfo">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p style="color:var(--text-secondary);padding:2rem 0;font-size:var(--text-sm)">
-        &copy; 2025 Alex Rivera
-      </p>
+      <div class="footer__inner">
+        <p class="footer__copy">&copy; 2026 Yubin Shin. Built with AI.</p>
+        <a href="#hero" class="footer__back-to-top"
+           aria-label="Scroll back to the top of the page">
+          Back to top
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+               aria-hidden="true" focusable="false">
+            <path d="M7 11V3M3.5 6.5 7 3l3.5 3.5"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
+
+  <!-- Skip-to-main-content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <script src="js/main.js"></script>
 </body>
